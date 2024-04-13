@@ -9,7 +9,13 @@ SUPPORTED_FILE_NAME = re.compile(
     f"^(.*)\-(.*)\.(.*)$", # <artist_name>-<music_name>.<ext>
 )
 
-def main(folder):
+def main(folder: str) -> None:
+    '''Main function.
+
+    Args:
+    folders: str
+        Path to the music folder.
+    '''
     for root, subdirs, files in os.walk(folder):
         items = []
 
@@ -26,6 +32,8 @@ def main(folder):
                         'tags': tags,
                         'cur_artist_name': str(tags['artist']),
                         'cur_music_title': str(tags['title']),
+                        # New artist name and title are retrieved from
+                        # the filename.
                         'new_artist_name': file_name_check.group(1),
                         'new_music_title': file_name_check.group(2),
                         'supported': True
@@ -40,14 +48,30 @@ def main(folder):
         # Make decisions
         _decisions(root, items)
 
-def _is_changable(item):
-    '''Whether an item is changable.'''
+def _is_changable(item: dict) -> bool:
+    '''Check whether an item is changable. It is changable if the file
+    is in a supported format and either the file's artist name tag or
+    title tag is different from that retrieved from the file name.
+
+    Args:
+    items: dict
+        An item.
+
+    Returns:
+    bool. Whether the item is changable.
+    '''
     return item['supported'] and (
         (item['cur_artist_name'] != item['new_artist_name']) or
         (item['cur_music_title'] != item['new_music_title'])
     )
 
-def _print_table(items):
+def _print_table(items: list[dict]) -> None:
+    '''Pretty print changable items.
+
+    Args:
+    items: list[dict]
+        List of changable items.
+    '''
     items = [
         [
             item['index'],
@@ -63,7 +87,15 @@ def _print_table(items):
         colalign=('left', 'left', 'right', 'right'),
     ))
 
-def _decisions(root, items):
+def _decisions(root: str, items: list[dict]) -> None:
+    '''Prompt user for reviewing proposed changes and ask for actions.
+
+    Args:
+    root: str
+        Subfolder.
+    items: list[dict]
+        List of changable items.
+    '''
     if items:
         print(f"\nFolder: {root}")
         _print_table(items)
