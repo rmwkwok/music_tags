@@ -56,7 +56,7 @@ source music_tags_venv/bin/activate
 
 3. Install requirements
 ```
-pip install -r /path/to/requirements.txt
+pip install -r requirements.txt
 ```
 
 4. Run the program
