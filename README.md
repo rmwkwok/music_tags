@@ -73,7 +73,7 @@ Folder: /path/to/folder/album
 #    file                                  artist                     title
 ---  ------------------  ------------------------  ------------------------
 1    Artist1-Title1.mp3    'Artist1' -> 'Artist1'  'asodjWOEHF' -> 'Title1'
-2    Artist1-Title2.mp3  'hfechf8ea' -> 'Artist1'     '&#H#&#H' -> 'Title2'
+2    Artist1-Title2.mp3  'hfechf8ea' -> 'Artist1'            '' -> 'Title2'
 3    Artist2-Title3.mp3    'SD&AD(#' -> 'Artist2'      'title3' -> 'Title3'
 
 Apply the above change? y: yes to all. n: no to all. d: decide one by one. q:quit.
