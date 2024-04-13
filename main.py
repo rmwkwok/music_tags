@@ -6,8 +6,7 @@ import argparse
 from tabulate import tabulate
 
 SUPPORTED_FILE_NAME = re.compile(
-    f"^(.*)\-(.*)\.(.*)$", # Add supported file extensions here
-    re.IGNORECASE, # case insensitive extension
+    f"^(.*)\-(.*)\.(.*)$", # <artist_name>-<music_name>.<ext>
 )
 
 def main(folder):
