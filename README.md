@@ -80,6 +80,8 @@ Apply the above change? y: yes to all. n: no to all. d: decide one by one. q:qui
 y/n/d/q ?:
 ```
 
+![](https://github.com/rmwkwok/music_tags/blob/main/image/music_tags_change.png?raw=true)
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/rmwkwok/music_tags.svg?style=for-the-badge
 [contributors-url]: https://github.com/rmwkwok/music_tags/graphs/contributors
