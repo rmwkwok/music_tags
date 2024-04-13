@@ -17,7 +17,7 @@
 This program retrieves the artist name and the music title from the file name, and write them to the file's corresponding tags.
 
 1. Filename format: "\<artist_name>-\<music_name>.\<ext>"
-2. Supported file formats: refer to [music-tag](musictag-url)
+2. Supported file formats: refer to [music-tag][musictag-url]
 
 The program will recursively go through all subfolders in "/path/to/folder". For each subfolder, it lists all changable files for review and action ([example](#example)).
 
