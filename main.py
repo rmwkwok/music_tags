@@ -76,8 +76,8 @@ def _print_table(items: list[dict]) -> None:
         [
             item['index'],
             item['file'],
-            f"{item['cur_artist_name'] or '<EMPTY>'} -> '{item['new_artist_name']}'",
-            f"{item['cur_music_title'] or '<EMPTY>'} -> '{item['new_music_title']}'",
+            f"'{item['cur_artist_name'] or '<EMPTY>'}' -> '{item['new_artist_name']}'",
+            f"'{item['cur_music_title'] or '<EMPTY>'}' -> '{item['new_music_title']}'",
         ] for item in items
     ]
 
